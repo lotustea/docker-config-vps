@@ -1,0 +1,8 @@
+# Ignorar diretórios de dados MySQL
+/mysql_data/
+
+# Ignorar diretórios de dados MongoDB
+/mongo_data/
+
+# Ignorar diretórios de dados Redis
+/redis_data/
