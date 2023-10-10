@@ -1,0 +1,78 @@
+version: '3.8'
+services:
+  php:
+    image: php:7.4.12-apache
+    ports:
+      - "80:80"
+    volumes:
+      - ./php:/var/www/html
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Root123
+      MYSQL_DATABASE: lt_db_lsd
+      MYSQL_USER: lotusta
+      MYSQL_PASSWORD: lous123tea
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - mynetwork
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: lotustea
+      PMA_PASSWORD: lotus123tea
+    networks:
+      - mynetwork
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+    networks:
+      - mynetwork
+
+  node:
+    image: node:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./node:/app
+    networks:
+      - mynetwork
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo_data:/data/db
+    networks:
+      - mynetwork
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - mynetwork
+
+  airflow:
+    image: puckel/docker-airflow
+    ports:
+      - "8081:8080"
+    environment:
+      - LOAD_EX=n
+      - EXECUTOR=Local
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
