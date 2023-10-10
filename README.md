@@ -17,8 +17,8 @@ Antes de começar, certifique-se de ter o Docker e o Docker Compose instalados e
    Clone este repositório em sua máquina local:
 
    ```shell
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone git@github.com:lotustea/docker-config-vps.git
+   cd docker-config-vps
    ```
 
 2. **Persistência de Dados:**
