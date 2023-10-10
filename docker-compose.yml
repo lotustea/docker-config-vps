@@ -16,7 +16,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: Root123
       MYSQL_DATABASE: lt_db_lsd
-      MYSQL_USER: lotusta
+      MYSQL_USER: lotustea
       MYSQL_PASSWORD: lous123tea
     volumes:
       - ./mysql:/var/lib/mysql
@@ -30,7 +30,7 @@ services:
     environment:
       PMA_HOST: mysql
       PMA_USER: lotustea
-      PMA_PASSWORD: lotus123tea
+      PMA_PASSWORD: lous123tea
     networks:
       - mynetwork
 
