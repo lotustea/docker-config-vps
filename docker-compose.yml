@@ -6,6 +6,8 @@ services:
       - "80:80"
     volumes:
       - ./php:/var/www/html
+    networks:
+      - mynetwork
 
   mysql:
     image: mysql:latest
@@ -71,6 +73,15 @@ services:
     environment:
       - LOAD_EX=n
       - EXECUTOR=Local
+    networks:
+      - mynetwork
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8082:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
     networks:
       - mynetwork
 
