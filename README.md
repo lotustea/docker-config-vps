@@ -1,5 +1,4 @@
 
-markdown
 # Ambiente Docker Multi-Serviço
 
 Este repositório contém um ambiente Docker configurado com vários serviços, incluindo PHP, MySQL, phpMyAdmin, MailHog, Node.js, MongoDB, Redis e Apache Airflow. Siga as instruções abaixo para usar e configurar cada serviço.
